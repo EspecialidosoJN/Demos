@@ -3,7 +3,7 @@ class Solution {
         int[] nume = new int[nums.length];
         int index;
         for (int i = 0; i<nums.length; i++){
-            index = (i+k)%(nums.length);
+            index = (i+k)%(nums.length); //because i+k is smaller than nums.length, the result of % will always be (i+k), until reaching the end of the array, where values at the end should move to the beginning 
             nume[index]=nums[i];
         }
         for (int i = 0; i<nums.length; i++){
