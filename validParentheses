@@ -1,0 +1,28 @@
+class Solution:
+  def isNoClose(self,charO,charC): #I usually don't code like this, this was an attempt to drastically reduce execution time
+        if charC is ")":
+            if charO == "(":
+                return False
+            return True
+        if charC is "}":
+            if charO == "{":
+                return False
+            return True
+        if charC is "]":
+            if charO == "[":
+                return False
+            return True
+    def isValid(self, s: str) -> bool:
+        op = []
+        for char in s:
+            if char in "([{":
+                op.append(char)
+            else:
+                if len(op) == 0:
+                    return False
+                if self.isNoClose(op[-1],char):
+                    return False
+                op.pop()
+        if len(op)>0:
+            return False
+        return True
