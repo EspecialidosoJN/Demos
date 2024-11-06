@@ -39,3 +39,4 @@ class Solution:
             self.propagateLRUD(y,xp)
         if yp >= 0:
             self.propagateLRUD(yp,x)
+# example grid = [["1","1","0","0","0"],["1","1","0","0","0"],["0","0","1","0","0"],["0","0","0","1","1"]]
