@@ -1,0 +1,26 @@
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        int max_index = nums.length - 1;
+        if (max_index<0){
+            return 0;
+        }
+        int unique_index = 1;
+        int k = 0;
+        int cache = nums[0];
+        boolean noRepetidos = true;
+        for (int i = 1; i<=max_index; i++){
+            if (cache != nums[i]){
+                cache = nums[i];
+                nums[unique_index] = nums[i];
+                unique_index++;
+                noRepetidos = true;
+            } else if(noRepetidos){
+                noRepetidos = false;
+                nums[unique_index] = nums[i];
+                unique_index++;
+            }
+        }
+        return unique_index;
+    }
+}
+//Sorted array, every time a new number is found or the second instance of it is found, it gets added to the current index of numbers that are known to be valid first or second instances of a value
