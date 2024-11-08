@@ -56,4 +56,4 @@ public:
         cout << left << up << right << down << endl;
         return (left || up) || (right || down);
     }
-};
+}; //known issues, this can find repeated words, this can cicle to build a word by repeating a letter if it finds it again during traversal
